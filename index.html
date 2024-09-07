@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ashhal Ahmed's Interactive Resume Builder</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+    integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <style>
+    /* Same styles as before */
+    body {
+      font-family: 'Raleway', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+      background-color: #2C3E50;
+      color: white;
+    }
+
+    header h1 {
+      font-size: 36px;
+      position: relative;
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: .15em solid #f39c12;
+      animation: typing 2.5s steps(30, end), blink-caret .75s step-end infinite;
+    }
+
+    header h1 span {
+      display: inline-block;
+      animation: pulse 1.5s infinite;
+    }
+
+    header p {
+      font-size: 18px;
+      line-height: 1.5;
+      margin-top: 10px;
+    }
+
+    header a {
+      margin: 0 10px;
+      color: white;
+      font-size: 20px;
+      text-decoration: none;
+    }
+
+    header a:hover {
+      color: #f39c12;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    form {
+      margin-bottom: 20px;
+    }
+
+    form label {
+      display: block;
+      font-size: 18px;
+      margin: 10px 0 5px;
+    }
+
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    form button,
+    #resumeOutput button {
+      background-color: #2980B9;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 18px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s;
+      margin-right: 10px;
+    }
+
+    form button:hover,
+    #resumeOutput button:hover {
+      background-color: #3498db;
+      transform: translateY(-3px);
+    }
+
+    form button:active,
+    #resumeOutput button:active {
+      transform: translateY(1px);
+    }
+
+    #resumeOutput {
+      margin-top: 20px;
+    }
+
+    #resumeContent {
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .skills {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .skills .column {
+      width: 45%;
+    }
+
+    .skills ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .skills ul li {
+      background-color: #ECF0F1;
+      padding: 10px 15px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #2C3E50;
+      color: white;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #f39c12;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink-caret {
+      from, to { border-color: transparent; }
+      50% { border-color: white; }
+    }
+
+    @keyframes pulse {
+      0%, 100% { color: white; }
+      50% { color: #f39c12; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1><span>Resume Maker</span></h1>
+    <p>Make resume easily and faster</p>
+    <section>
+      <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://github.com/AshhalAhmed/" target="_blank"><i class="fab fa-github-alt"></i></a>
+      <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/AshhalAhmed" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    </section>
+  </header>
+
+  <main>
+    <section id="formSection">
+      <h3>Fill out the form to generate your resume</h3>
+      <form id="resumeForm">
+        <h4>Personal Information</h4>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <h4>Education</h4>
+        <label for="education">Education Details:</label>
+        <textarea id="education" name="education" rows="4" required></textarea>
+
+        <h4>Work Experience</h4>
+        <label for="experience">Work Experience:</label>
+        <textarea id="experience" name="experience" rows="4" required></textarea>
+
+        <h4>Skills</h4>
+        <label for="skills">Skills (comma-separated):</label>
+        <input type="text" id="skills" name="skills" required>
+
+        <button type="submit">Generate Resume</button>
+      </form>
+    </section>
+
+    <section id="resumeOutput" style="display: none;">
+      <h3>Generated Resume</h3>
+      <div id="resumeContent"></div>
+      <button id="editBtn">Edit</button>
+      <button id="downloadBtn">Download PDF</button>
+      <button id="shareBtn">Share Link</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Ashhal Ahmed. All rights reserved. | <a href="mailto:ashhalahmed8@gmail.com">Contact</a></p>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+
+</html>

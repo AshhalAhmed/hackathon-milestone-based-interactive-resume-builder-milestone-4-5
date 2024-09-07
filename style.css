@@ -1,0 +1,166 @@
+body {
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  header {
+    text-align: center;
+    padding: 20px;
+    background-color: #2C3E50;
+    color: white;
+  }
+  
+  header h1 {
+    font-size: 36px;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: .15em solid #f39c12;
+    animation: typing 2.5s steps(30, end), blink-caret .75s step-end infinite;
+  }
+  
+  header h1 span {
+    display: inline-block;
+    animation: pulse 1.5s infinite;
+  }
+  
+  header p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-top: 10px;
+  }
+  
+  header img {
+    border-radius: 50%;
+    width: 150px;
+    width: 120px;
+    margin-bottom: 20px;
+  }
+  
+  header a {
+    margin: 0 10px;
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+  }
+  
+  header a:hover {
+    color: #f39c12;
+  }
+  
+  main {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  section {
+    margin-bottom: 30px;
+  }
+  
+  section h3 {
+    font-size: 28px;
+    color: #2C3E50;
+    border-bottom: 2px solid #2980B9;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+  }
+  
+  .course, .job-title {
+    margin-bottom: 20px;
+  }
+  
+  .course h4, .job-title strong {
+    font-size: 20px;
+    color: #2980B9;
+  }
+  
+  .course p, .descrition p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .skills {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .skills .column {
+    width: 45%;
+  }
+  
+  .skills ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .skills ul li {
+    background-color: #ECF0F1;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Stylish Button */
+  #toggleSkillsButton {
+    background-color: #2980B9;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    margin: 20px auto;
+    display: block;
+  }
+  
+  #toggleSkillsButton:hover {
+    background-color: #3498db;
+    transform: translateY(-3px);
+  }
+  
+  #toggleSkillsButton:active {
+    transform: translateY(1px);
+  }
+  
+  footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #2C3E50;
+    color: white;
+  }
+  
+  footer a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  footer a:hover {
+    color: #f39c12;
+  }
+  
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  
+  @keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: white; }
+  }
+  
+  @keyframes pulse {
+    0%, 100% { color: white; }
+    50% { color: #f39c12; }
+  }
+  
